@@ -1,0 +1,22 @@
+# Pull request template
+
+## Summary
+
+Describe the change and its purpose.
+
+## Related issue
+
+- Fixes #
+
+## What changed
+
+- Item 1
+- Item 2
+- Item 3
+
+## Validation
+
+- [ ] Tests added or updated
+- [ ] Docs updated
+- [ ] Manual verification performed
+- [ ] No unintended scope expansion

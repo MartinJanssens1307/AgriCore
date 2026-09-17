@@ -1,0 +1,48 @@
+# Contributing
+
+This project follows a lightweight, spec-driven workflow.
+
+## Core workflow
+
+1. Start from an issue.
+2. For non-trivial work, write a short spec in `docs/specs/`.
+3. Keep changes small and reviewable.
+4. Prefer implementation in a single domain at a time.
+5. Update the relevant docs when the design or product direction changes.
+
+## Branch naming
+
+Use a pattern like:
+
+- `feature/<short-name>`
+- `fix/<short-name>`
+- `docs/<short-name>`
+- `chore/<short-name>`
+
+## Commit style
+
+Use clear, imperative commit messages such as:
+
+- `Add initial farm overview spec`
+- `Document architecture and roadmap`
+- `Fix parcel deletion regression`
+
+## Pull requests
+
+- Reference the related issue when possible.
+- Keep the PR focused.
+- Include a short description of what changed and why.
+- Update docs and tests when behavior changes.
+
+## Local development
+
+```bash
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+## Testing
+
+The project already has some tests in the `Fields` app. More test coverage should be added incrementally, especially for the `ERP` domain and tenant boundaries.
+

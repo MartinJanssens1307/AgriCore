@@ -1,0 +1,52 @@
+# Roadmap
+
+This roadmap reflects the current state of the project and the product direction described in `docs/PRODUCT_VISION.md`.
+
+## Phase 0 — Foundation and project hygiene
+
+- [ ] Document the current architecture and product direction
+- [ ] Add contribution and workflow guidance
+- [ ] Add environment variable documentation
+- [ ] Add a test baseline and CI
+- [ ] Decide on licensing
+
+## Phase 1 — Master data and farm overview
+
+- [ ] Improve farm/company setup and master data quality
+- [ ] Clarify user roles and permissions for farms
+- [ ] Improve customer and supplier master data management
+- [ ] Add a global dashboard overview for key data
+- [ ] Make the current `Fields` module part of the broader data model
+
+## Phase 2 — Farm operations
+
+- [ ] Define the first operational domain to implement (fields, crops, or contracting workflows)
+- [ ] Design and prototype a minimal field / crop model
+- [ ] Design and prototype a minimal contracting-services model
+- [ ] Connect operational records to transactions and products
+
+## Phase 3 — Production and stock
+
+- [ ] Model harvest outputs and derived products
+- [ ] Add stock tracking and material flow
+- [ ] Support service and product billing tied to farm operations
+
+## Phase 4 — Reporting and decision support
+
+- [ ] Add dashboards and summaries
+- [ ] Create reporting exports for customers, transactions, and farm performance
+- [ ] Add AI-assisted support where it provides clear business value
+
+## Phase 5 — Platform and business growth
+
+- [ ] Expand to more farm profiles and more agricultural use cases
+- [ ] Add accountant and multi-farm access workflows
+- [ ] Improve integrations and partner ecosystem readiness
+- [ ] Prepare for external data and business partnerships
+
+## Notes
+
+- The project is intentionally incremental.
+- The product direction is ambitious, but the roadmap should remain realistic and testable.
+- The current code and app separation show that the path is already moving toward domain-driven organization.
+
