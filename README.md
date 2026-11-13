@@ -15,7 +15,7 @@ The repository already contains:
 - A field/cadastral app (`Fields/`)
 - Basic company, customer, partner, address, product, and transaction models
 - Transaction validation logic
-- Factory-based tests in the `Fields` app
+- Cadastral parcel view tests in the `Fields` app
 - Docker configuration for local development
 
 The project is not yet a polished product. It is best understood as a sandbox and evolving platform, with a growing foundation for actual farm use cases.
@@ -48,39 +48,42 @@ AgriCore/
 ├── .gitignore
 ├── README.md
 └── docs/
+    ├── architecture.md
+    ├── development.md
+    └── decisions/
+        ├── 001-tenant-model-and-data-scoping.md
+        ├── 002-transaction-lifecycle-and-status-rules.md
+        ├── 003-product-snapshot-strategy.md
+        ├── 004-vat-null-and-money-precision.md
+        ├── 005-fields-and-erp-boundary.md
+        ├── 006-peppol-scope-and-prioritization.md
+        └── adr-template.md
 ```
 
 ## Quick start
 
-```bash
-# clone
-git clone https://github.com/MartinJanssens1307/AgriCore.git
-cd AgriCore
+The verified development workflow uses VS Code Dev Containers and Docker Desktop. Install the Dev Containers extension, open the repository in VS Code, and choose **Reopen in Container**. The first time, run `python manage.py migrate` in a container terminal; Django starts automatically when the container attaches.
 
-# install dependencies
-pip install -r requirements.txt
-
-# run migrations
-python manage.py migrate
-
-# start development server
-python manage.py runserver
-```
-
-For Docker-based usage:
-
-```bash
-docker-compose up --build
-```
+See the [development setup guide](docs/development.md) for prerequisites, Tailwind watch, tests, troubleshooting, and production-status notes.
 
 ## Documentation
 
-See the documentation folder for the current project direction and development roadmap.
+- [Development setup](docs/development.md)
+- [Architecture overview](docs/architecture.md)
+- [Tenant model and data scoping ADR](docs/decisions/001-tenant-model-and-data-scoping.md)
+- [Transaction lifecycle and status rules ADR](docs/decisions/002-transaction-lifecycle-and-status-rules.md)
+- [Product snapshot strategy ADR](docs/decisions/003-product-snapshot-strategy.md)
+- [VAT null handling and money precision ADR](docs/decisions/004-vat-null-and-money-precision.md)
+- [Fields and ERP domain boundary ADR](docs/decisions/005-fields-and-erp-boundary.md)
+- [Peppol scope and prioritization ADR](docs/decisions/006-peppol-scope-and-prioritization.md)
+- [ADR template](docs/decisions/adr-template.md)
+
+Documentation is being built incrementally from confirmed project decisions. Future guides can be added here as their setup and behavior are verified.
 
 ## Important notes
 
 - The project is currently Belgium-first, but the model already anticipates international customer/supplier data.
-- Peppol support exists in the codebase but should be treated as exploratory/deferred rather than a current early-release requirement.
+- The Peppol customer lookup is exploratory, not production-ready, and remains the lowest-priority feature until user adoption or profitability justifies revisiting its API and usage costs. See the [Peppol scope ADR](docs/decisions/006-peppol-scope-and-prioritization.md).
 - The project is intentionally incremental: the goal is to build small, useful pieces, validate them, and refine the architecture as the business context becomes clearer.
 
 ## Long-term vision
